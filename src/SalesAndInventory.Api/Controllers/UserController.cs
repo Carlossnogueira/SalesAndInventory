@@ -8,7 +8,7 @@ namespace SalesAndInventory.Api.Controllers;
 [Route("api/[controller]")]
 public class UserController : ControllerBase
 {
-    // CREATE READ UPDATE DELETE
+
     [HttpPost]
     [ProducesResponseType(StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -37,7 +37,7 @@ public class UserController : ControllerBase
     
     [HttpDelete]
     [Route("{id:long}")]
-    [ProducesResponseType(typeof(ResponseRegisterUserJson), StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<IActionResult> UpdateUser([FromRoute] long id)
