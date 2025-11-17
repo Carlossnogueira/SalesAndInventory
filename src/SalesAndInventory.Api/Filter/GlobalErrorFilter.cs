@@ -5,7 +5,7 @@ using SalesAndInventory.Exception;
 
 namespace SalesAndInventory.Api.Filter;
 
-// TODO UserNotFoundException
+
 public class GlobalErrorFilter : IExceptionFilter
 {
     private readonly IWebHostEnvironment _environment;

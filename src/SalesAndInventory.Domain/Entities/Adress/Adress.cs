@@ -12,12 +12,11 @@ public class Adress
     public string Street { get; set; } = string.Empty;
 
     [Required]
-    public string Number { get; set; }
+    public string Number { get; set; } = string.Empty;
 
     public string Neighborhood { get; set; } = string.Empty;
 
     public int CityId { get; set; }
     [ForeignKey("CityId")]
     public City City { get; set; } = null!;
-    
 }

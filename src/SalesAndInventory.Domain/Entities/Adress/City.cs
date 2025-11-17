@@ -6,7 +6,7 @@ namespace SalesAndInventory.Domain.Entities.Adress;
 
 public class City
 {
-    public long Id;
+    public int Id { get; set; }
 
     [Required, MaxLength(100)]
     public string Name { get; set; } = string.Empty;

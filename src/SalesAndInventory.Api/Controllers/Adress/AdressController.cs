@@ -7,30 +7,31 @@ namespace SalesAndInventory.Api.Controllers.Adress
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class StateController : ControllerBase
+    public class AdressController : ControllerBase
     {
+        
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<IActionResult> AddState([FromBody] RequestRegisterStateJson request)
+        public async Task<IActionResult> AddAdress([FromBody] RequestRegisterAdressJson request)
         {
             return Created(string.Empty, "");
         }
 
         [HttpGet]
         [Route("{id:int}")]
-        [ProducesResponseType(typeof(ResponseRegisterStateJson), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ResponseRegisterAdressJson), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
-        public async Task<IActionResult> GetState([FromRoute] int id, [FromBody] RequestRegisterStateJson request)
+        public async Task<IActionResult> DeleteAdress([FromRoute] int id, [FromBody] RequestRegisterAdressJson request)
         {
             return Ok();
         }
 
         [HttpPatch]
         [Route("{id:long}")]
-        [ProducesResponseType(typeof(ResponseRegisterStateJson), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ResponseRegisterAdressJson), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<IActionResult> UpdateCity([FromRoute] long id, [FromBody] RequestRegisterStateJson request)
+        public async Task<IActionResult> UpdateUpdateAdress([FromRoute] long id, [FromBody] RequestRegisterAdressJson request)
         {
             return Ok();
         }
@@ -40,7 +41,7 @@ namespace SalesAndInventory.Api.Controllers.Adress
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<IActionResult> DeleteState([FromRoute] int id)
+        public async Task<IActionResult> DeleteAdress([FromRoute] int id)
         {
             return Ok();
         }

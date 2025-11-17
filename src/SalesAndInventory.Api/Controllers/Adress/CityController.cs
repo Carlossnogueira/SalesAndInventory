@@ -7,30 +7,30 @@ namespace SalesAndInventory.Api.Controllers.Adress
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class StateController : ControllerBase
+    public class CityController : ControllerBase
     {
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<IActionResult> AddState([FromBody] RequestRegisterStateJson request)
+        public async Task<IActionResult> AddCity([FromBody] RequestRegisterCityJson request)
         {
             return Created(string.Empty, "");
         }
 
         [HttpGet]
         [Route("{id:int}")]
-        [ProducesResponseType(typeof(ResponseRegisterStateJson), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ResponseRegisterCityJson), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
-        public async Task<IActionResult> GetState([FromRoute] int id, [FromBody] RequestRegisterStateJson request)
+        public async Task<IActionResult> DeleteCity([FromRoute] int id, [FromBody] RequestRegisterCityJson request)
         {
             return Ok();
         }
 
         [HttpPatch]
         [Route("{id:long}")]
-        [ProducesResponseType(typeof(ResponseRegisterStateJson), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ResponseRegisterCityJson), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<IActionResult> UpdateCity([FromRoute] long id, [FromBody] RequestRegisterStateJson request)
+        public async Task<IActionResult> UpdateCity([FromRoute] long id, [FromBody] RequestRegisterCityJson request)
         {
             return Ok();
         }
@@ -40,7 +40,7 @@ namespace SalesAndInventory.Api.Controllers.Adress
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<IActionResult> DeleteState([FromRoute] int id)
+        public async Task<IActionResult> DeleteCity([FromRoute] int id)
         {
             return Ok();
         }
