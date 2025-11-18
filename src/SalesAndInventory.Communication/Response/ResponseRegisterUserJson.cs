@@ -1,10 +1,12 @@
-using SalesAndInventory.Communication.Enum;
+
+
+using SalesAndInventory.Domain.Enum;
 
 namespace SalesAndInventory.Communication.Response;
 
 public class ResponseRegisterUserJson
 {
-    public string Username { get; set; } = string.Empty;
-    public string Password { get; set; } = string.Empty;
+    public string Name { get; set; } = string.Empty;
+    public string Login { get; set; } = string.Empty;
     public Qualification  Qualification { get; set; }
 }

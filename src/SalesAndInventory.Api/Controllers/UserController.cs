@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using SaleAndInventory.Application.UseCase.User.Register;
 using SalesAndInventory.Communication.Request;
 using SalesAndInventory.Communication.Response;
 
@@ -10,11 +11,14 @@ public class UserController : ControllerBase
 {
 
     [HttpPost]
-    [ProducesResponseType(StatusCodes.Status201Created)]
+    [ProducesResponseType(typeof(ResponseRegisterUserJson),StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<IActionResult> AddUser([FromBody] RequestRegisterUserJson request)
+    public async Task<IActionResult> AddUser(
+        [FromBody] RequestRegisterUserJson request, 
+        [FromServices] IRegisterUserUseCase service)
     {
-        return Created(string.Empty, "");
+        var result = await service.Execute(request);
+        return Created(string.Empty, result);
     }
     
     [HttpGet]

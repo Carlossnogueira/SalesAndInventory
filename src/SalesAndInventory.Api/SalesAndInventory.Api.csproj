@@ -15,6 +15,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\SaleAndInventory.Application\SaleAndInventory.Application.csproj" />
       <ProjectReference Include="..\SalesAndInventory.Communication\SalesAndInventory.Communication.csproj" />
       <ProjectReference Include="..\SalesAndInventory.Exception\SalesAndInventory.Exception.csproj" />
       <ProjectReference Include="..\SalesAndInventory.Infrastructure\SalesAndInventory.Infrastructure.csproj" />

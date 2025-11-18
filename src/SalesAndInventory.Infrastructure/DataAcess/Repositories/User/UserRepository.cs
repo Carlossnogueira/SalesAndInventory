@@ -1,8 +1,9 @@
+using Microsoft.EntityFrameworkCore;
 using SalesAndInventory.Domain.Repositories.User;
 namespace SalesAndInventory.Infrastructure.DataAcess.Repositories.User;
 
 
-public class UserRepository : IUserRepository, IUserRepositoryWriteOnly
+public class UserRepository : IUserRepositoryReadOnly, IUserRepositoryWriteOnly
 {
     private readonly SalesAndInventoryContext _context;
     
@@ -18,7 +19,13 @@ public class UserRepository : IUserRepository, IUserRepositoryWriteOnly
         var result = await _context.Users.FindAsync(userId);
         return result;
     }
-    
+
+    public async Task<bool> UserExistsWithSameLogin(string login)
+    {
+        var result = await _context.Users.AnyAsync(u => u.Login == login);
+        return result;
+    }
+
     // write
     public async Task AddAsync(Domain.Entities.User user)
     {

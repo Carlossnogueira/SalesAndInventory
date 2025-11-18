@@ -65,6 +65,6 @@ public class GlobalErrorFilter : IExceptionFilter
         }
 
         context.HttpContext.Response.StatusCode = StatusCodes.Status500InternalServerError;
-        context.Result = new BadRequestObjectResult("Internal Server Error");
+        context.Result = new BadRequestObjectResult("Internal Server Error" + context.Exception.Message);
     }
 }

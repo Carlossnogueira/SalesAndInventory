@@ -11,4 +11,16 @@
       <PackageReference Include="FluentValidation" Version="12.1.0" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Reference Include="Microsoft.Extensions.Configuration.Abstractions">
+        <HintPath>..\..\..\..\..\..\.nuget\packages\microsoft.extensions.configuration.abstractions\9.0.5\lib\net8.0\Microsoft.Extensions.Configuration.Abstractions.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\SalesAndInventory.Communication\SalesAndInventory.Communication.csproj" />
+      <ProjectReference Include="..\SalesAndInventory.Domain\SalesAndInventory.Domain.csproj" />
+      <ProjectReference Include="..\SalesAndInventory.Exception\SalesAndInventory.Exception.csproj" />
+    </ItemGroup>
+
 </Project>

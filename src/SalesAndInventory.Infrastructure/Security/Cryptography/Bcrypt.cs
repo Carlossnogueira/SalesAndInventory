@@ -6,8 +6,10 @@ namespace SalesAndInventory.Infrastructure.Security.Cryptography;
 
 public class Bcrypt : IEncrypter
 {
-    public string Encrypt(string text)
+    public string Encrypt(string password)
     {
-        return BC.HashPassword(text);
+        string passwordHash = BC.HashPassword(password);
+
+        return passwordHash;
     }
 }
