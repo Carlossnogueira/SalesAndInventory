@@ -3,7 +3,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using SalesAndInventory.Domain.Repositories;
+using SalesAndInventory.Domain.Security.Cryptography;
 using SalesAndInventory.Infrastructure.DataAcess;
+using SalesAndInventory.Infrastructure.Security.Cryptography;
 
 namespace SalesAndInventory.Infrastructure;
 
@@ -14,6 +16,7 @@ public static class InfrastructureDependencyInjectionExtension
     {
         AddRepositories(services);
         AddDbContext(services, configuration);
+        services.AddScoped<IEncrypter, Bcrypt>();
     }
 
     private static void AddRepositories(IServiceCollection services)

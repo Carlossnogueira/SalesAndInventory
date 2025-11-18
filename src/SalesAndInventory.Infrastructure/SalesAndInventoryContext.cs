@@ -5,7 +5,7 @@ using SalesAndInventory.Domain.Entities.Adress;
 namespace SalesAndInventory.Infrastructure;
 
 
-// TODO run migration
+
 public class SalesAndInventoryContext : DbContext
 {
     public SalesAndInventoryContext(DbContextOptions<SalesAndInventoryContext> options) : base(options) { }
