@@ -2,6 +2,8 @@ namespace SalesAndInventory.Exception;
 
 public abstract class SalesAndInventoryException : SystemException
 {
-     public SalesAndInventoryException() { }
-     public SalesAndInventoryException(string message) : base(message){}
+     protected SalesAndInventoryException(string message) : base(message){}
+     
+     public abstract int StatusCode { get; }
+     public abstract List<string> GetErrors();
 }

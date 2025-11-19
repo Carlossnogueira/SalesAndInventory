@@ -1,10 +1,10 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using SaleAndInventory.Application.AutoMapper;
-using SaleAndInventory.Application.UseCase.User;
-using SaleAndInventory.Application.UseCase.User.Register;
+using SalesAndInventory.Application.UseCase.User;
+using SalesAndInventory.Application.AutoMapper;
+using SalesAndInventory.Application.UseCase.User.Register;
 
-namespace SaleAndInventory.Application;
+namespace SalesAndInventory.Application;
 
 public static class ApplicationDependencyInjection
 {

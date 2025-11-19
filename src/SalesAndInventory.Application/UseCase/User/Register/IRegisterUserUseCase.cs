@@ -1,7 +1,7 @@
 using SalesAndInventory.Communication.Request;
 using SalesAndInventory.Communication.Response;
 
-namespace SaleAndInventory.Application.UseCase.User.Register;
+namespace SalesAndInventory.Application.UseCase.User.Register;
 
 public interface IRegisterUserUseCase
 {

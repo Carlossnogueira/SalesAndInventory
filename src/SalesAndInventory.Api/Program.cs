@@ -1,4 +1,4 @@
-using SaleAndInventory.Application;
+using SalesAndInventory.Application;
 using SalesAndInventory.Api.Filter;
 using SalesAndInventory.Infrastructure;
 

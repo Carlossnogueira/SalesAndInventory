@@ -7,7 +7,7 @@ using SalesAndInventory.Domain.Repositories.User;
 using SalesAndInventory.Domain.Security.Cryptography;
 using SalesAndInventory.Exception;
 
-namespace SaleAndInventory.Application.UseCase.User.Register;
+namespace SalesAndInventory.Application.UseCase.User.Register;
 
 public class RegisterUserUseCase : IRegisterUserUseCase
 {
@@ -54,7 +54,7 @@ public class RegisterUserUseCase : IRegisterUserUseCase
 
         if (existsUserWithSameLogin)
         {
-            result.Errors.Add(new ValidationFailure("Login", "Invalid login"));
+            result.Errors.Add(new ValidationFailure(String.Empty, "Invalid login"));
         }
         
         if (!result.IsValid)

@@ -32,28 +32,10 @@ public class GlobalErrorFilter : IExceptionFilter
 
     private void HandleProjectException(ExceptionContext context)
     {
-
-        if (context.Exception is ErrorOnValidationException)
-        {
-            var exception = (ErrorOnValidationException)context.Exception;
-            var errorResponse = new ResponseErrorJson(exception.Errors);
-
-            context.HttpContext.Response.StatusCode = StatusCodes.Status400BadRequest;
-            context.Result = new BadRequestObjectResult(errorResponse);
-        }
-        else if(context.Exception is UserNotFoundException)
-        {
-            var exception = (ErrorOnValidationException)context.Exception;
-            var errorResponse = new ResponseErrorJson(exception.Errors);
-
-            context.HttpContext.Response.StatusCode = StatusCodes.Status404NotFound;
-            context.Result = new NotFoundObjectResult(errorResponse);
-        }
-        else
-        {
-            ThrowUnknowError(context);
-        }
-       
+        var salesAndInventoryException = (SalesAndInventoryException)context.Exception;
+        var errorResponse = new ResponseErrorJson(salesAndInventoryException.GetErrors());
+        context.HttpContext.Response.StatusCode = salesAndInventoryException.StatusCode;
+        context.Result = new ObjectResult(errorResponse);
     }
     
     private void ThrowUnknowError(ExceptionContext context)

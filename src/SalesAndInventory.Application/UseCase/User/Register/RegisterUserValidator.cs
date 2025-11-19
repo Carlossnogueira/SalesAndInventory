@@ -1,7 +1,7 @@
 using FluentValidation;
 using SalesAndInventory.Communication.Request;
 
-namespace SaleAndInventory.Application.UseCase.User.Register;
+namespace SalesAndInventory.Application.UseCase.User.Register;
 
 public class RegisterUserValidator : AbstractValidator<RequestRegisterUserJson>
 {

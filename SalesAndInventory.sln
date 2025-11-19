@@ -8,7 +8,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesAndInventory.Infrastru
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesAndInventory.Exception", "src\SalesAndInventory.Exception\SalesAndInventory.Exception.csproj", "{DCE69E99-18D7-4254-854D-897ACD5B698D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SaleAndInventory.Application", "src\SaleAndInventory.Application\SaleAndInventory.Application.csproj", "{184E3E81-7469-490F-AA93-15DE3ADCDE9C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesAndInventory.Application", "src\SalesAndInventory.Application\SalesAndInventory.Application.csproj", "{184E3E81-7469-490F-AA93-15DE3ADCDE9C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesAndInventory.Api", "src\SalesAndInventory.Api\SalesAndInventory.Api.csproj", "{683A86E3-482E-4F26-875D-DB4DB1A83195}"
 EndProject

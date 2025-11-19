@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using SaleAndInventory.Application.UseCase.User.Register;
+using SalesAndInventory.Application.UseCase.User.Register;
 using SalesAndInventory.Communication.Request;
 using SalesAndInventory.Communication.Response;
 

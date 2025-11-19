@@ -3,7 +3,7 @@ using SalesAndInventory.Communication.Request;
 using SalesAndInventory.Communication.Response;
 using SalesAndInventory.Domain.Entities;
 
-namespace SaleAndInventory.Application.AutoMapper;
+namespace SalesAndInventory.Application.AutoMapper;
 
 public class AutoMapping : Profile
 {
