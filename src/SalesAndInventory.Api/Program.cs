@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using SalesAndInventory.Application;
 using SalesAndInventory.Api.Filter;
 using SalesAndInventory.Infrastructure;
@@ -21,6 +22,13 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+    
+    // Autorun migrations
+    using (var scope = app.Services.CreateScope())
+    {
+        var dbContext = scope.ServiceProvider.GetRequiredService<SalesAndInventoryContext>();
+        dbContext.Database.Migrate();
+    }
 }
 
 app.UseAuthorization();
@@ -28,3 +36,5 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+

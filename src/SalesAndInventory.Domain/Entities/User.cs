@@ -10,6 +10,7 @@ public class User
     public string Password { get; set; } = string.Empty;
     public Qualification Qualification { get; set; } = Qualification.Employee;
     public bool IsDeleted { get; set; }
-    public DateTime UpdatedAt { get; set; }
+    public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+    public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
     public string UserIdentifier  { get; set; } = string.Empty;
 }
