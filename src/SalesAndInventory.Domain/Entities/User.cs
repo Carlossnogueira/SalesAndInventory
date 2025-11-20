@@ -12,5 +12,5 @@ public class User
     public bool IsDeleted { get; set; }
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
     public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
-    public string UserIdentifier  { get; set; } = string.Empty;
+    public Guid UserIdentifier  { get; set; }
 }

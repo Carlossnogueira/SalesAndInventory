@@ -5,9 +5,11 @@ using Microsoft.Extensions.DependencyInjection;
 using SalesAndInventory.Domain.Repositories;
 using SalesAndInventory.Domain.Repositories.User;
 using SalesAndInventory.Domain.Security.Cryptography;
+using SalesAndInventory.Domain.Security.Token;
 using SalesAndInventory.Infrastructure.DataAcess;
 using SalesAndInventory.Infrastructure.DataAcess.Repositories.User;
 using SalesAndInventory.Infrastructure.Security.Cryptography;
+using SalesAndInventory.Infrastructure.Security.Token;
 
 namespace SalesAndInventory.Infrastructure;
 
@@ -18,7 +20,15 @@ public static class InfrastructureDependencyInjectionExtension
     {   
         AddRepositories(services);
         AddDbContext(services, configuration);
+        AddToken(services,configuration);
         services.AddScoped<IEncrypter, Bcrypt>();
+    }
+
+    public static void AddToken(this IServiceCollection services, IConfiguration configuration)
+    {
+        var expirationTimeMinutes = configuration.GetValue<uint>("Settings:Jwt:ExpiresMinutes");
+        var singingKey = configuration.GetValue<string>("Settings:Jwt:SigningKey");
+        services.AddScoped<IAccessTokenGenerator>(c => new JwtTokenGenerator(expirationTimeMinutes, singingKey!));
     }
 
     private static void AddRepositories(IServiceCollection services)
